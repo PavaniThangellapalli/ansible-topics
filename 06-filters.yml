@@ -1,0 +1,9 @@
+- name: Filters
+  hosts: localhost
+  connection: local
+  vars:
+    URL: https://github.com/PavaniThangellapalli/ansible-topics
+  tasks:
+    - name: Print words from URL
+      ansible.builtin.debug:
+        msg: "{{ URL | split('/') }}"
