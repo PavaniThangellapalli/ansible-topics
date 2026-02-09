@@ -4,9 +4,10 @@
     - debug:
         msg: "Hello"
 
-- name: Print Fact
+- name: Facts
   hosts: localhost
   connection: local
   tasks:
-    ansible.builtin.debug:
-    msg: “{{ ansible_architecture }}”
+    - name: Print fact
+      ansible.builtin.debug:
+        msg: “{{ ansible_architecture }}”
