@@ -3,3 +3,9 @@
   tasks:
     - debug:
         msg: "Hello"
+
+- name: Print Fact
+  hosts: localhost
+  connection: local
+  ansible.builtin.debug:
+    msg: “{{ ansible_architecture }}”
