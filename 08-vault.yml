@@ -1,0 +1,19 @@
+- name: Vault
+  hosts: localhost
+  connection: local
+  vars:
+    PASSWORD: !vault |
+      $ANSIBLE_VAULT;1.1;AES256
+      62356439626161386537653237313833633935323461323732613235363433623731373764653463
+      6562653566623933633364353339386136383832613239640a346265653434383130623266636633
+      31643833396664333235383538353132653863363239613762323030393464663630396264656136
+      3937313933616139640a376363313665396432336665353338386539383930343232643566313064
+      6662
+  tasks:
+    - name: Print Var
+      ansible.builtin.debug:
+        msg: "{{ PASSWORD }}"
+
+
+#  ansible-vault encrypt_string RoboShop@1 ⇒ It will prompt you to give a string to encrypt the password “RoboShop@1” and then you will get a ansible vault key.
+#  You can store this vault key in a file.
