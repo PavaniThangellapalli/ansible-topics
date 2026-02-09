@@ -7,3 +7,6 @@
       ignore_errors: true
     - name: Print
       ansible.builtin.shell: ls
+      register: out
+      ansible.builtin.debug:
+        msg: "{{ out }}"
