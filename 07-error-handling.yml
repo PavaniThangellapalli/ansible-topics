@@ -2,11 +2,12 @@
   hosts: localhost
   connection: local
   tasks:
-    - name: print
+    - name: Task1
       ansible.builtin.shell: cat /etc/passwd | grep demo
       ignore_errors: true
-    - name: Print
+    - name: Task2
       ansible.builtin.shell: ls
       register: out
+    - name: Print Task2
       ansible.builtin.debug:
         msg: "{{ out }}"
