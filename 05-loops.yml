@@ -1,0 +1,12 @@
+- name: Loops
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Print Course with Price
+      ansible.builtin.debug:
+        msg: Course Name - {{ item.name }}, Course Price - {{ item.price }}
+      loop:
+        - {name: DevOps, price: 10000}
+        - {name: Azure, price: 5000}
+        - {name: AWS, price: 7000}
+
