@@ -4,5 +4,6 @@
   tasks:
     - name: print
       ansible.builtin.shell: cat /etc/passwd | grep demo
+      ignore_errors: true
     - name: Print
       ansible.builtin.shell: ls
